@@ -4,6 +4,7 @@ import com.eroglu.architecture.data.source.local.LocalTask
 import com.eroglu.architecture.data.source.network.NetworkTask
 import com.eroglu.architecture.data.source.network.TaskStatus
 
+// ModelMappingExt.kt: Model Dönüştürücü ("Tercüman")
 /**
  * Veri modeli dönüştürme (mapping) uzantı fonksiyonları. Üç model türü vardır:
  *

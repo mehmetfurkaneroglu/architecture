@@ -13,6 +13,9 @@ import javax.inject.Singleton
 
 // Yani bu sınıf Hilt’e şunu söyler: “Ben uygulamanın her yerinde kullanılacak coroutine’lerle ilgili bağımlılıkları (Dispatcher, Scope) sağlayacağım.”
 
+// di/DataModules.kt ve di/CoroutinesModule.kt: "Yapıştırıcı" (Hilt)
+// Bu dosyalar, Hilt'e (Dependency Injection) hangi parçayı nasıl oluşturacağını söyleyen "talimat" dosyalarıdır.
+
 /**
  * -----------------------------
  * 1️⃣ Qualifier Annotation’ları

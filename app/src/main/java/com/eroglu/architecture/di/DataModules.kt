@@ -19,6 +19,10 @@ import jakarta.inject.Singleton
 /**
  * Hilt, TaskRepository’ye ihtiyaç duyulan her yerde DefaultTaskRepository örneğini otomatik verir.
  */
+
+// di/DataModules.kt ve di/CoroutinesModule.kt: "Yapıştırıcı" (Hilt)
+// Bu dosyalar, Hilt'e (Dependency Injection) hangi parçayı nasıl oluşturacağını söyleyen "talimat" dosyalarıdır.
+
 @Module
 @InstallIn(SingletonComponent::class) // @InstallIn(SingletonComponent::class) → Bu modül, uygulamanın en üst seviyesine (Application) yüklenir.
 abstract class RepositoryModule {
