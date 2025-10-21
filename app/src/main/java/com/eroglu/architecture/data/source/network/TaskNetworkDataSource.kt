@@ -11,6 +11,9 @@ import javax.inject.Inject
  * Yani bu, uygulamanın ağ katmanını taklit eden bir test/örnek veri kaynağıdır.
  */
 class TaskNetworkDataSource @Inject constructor(): NetworkDataSource {
+    // TaskNetworkDataSource: Ağ üzerinden veri sağlayan sınıfın sahte (mock) versiyonu
+    // NetworkDataSource: Uygulamanın veri erişim arayüzü (interface)
+    // Mutex: Eşzamanlı işlemlerde veri tutarlılığını korur
     // Mutex (karşılıklı dışlama kilidi), aynı anda birden fazla thread’in
     // veriye erişmesini engeller. Thread-safe işlem yapılmasını sağlar.
     private val accessMutex = Mutex()
