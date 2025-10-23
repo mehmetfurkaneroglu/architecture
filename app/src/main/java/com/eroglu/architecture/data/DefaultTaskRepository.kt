@@ -6,7 +6,6 @@ import com.eroglu.architecture.data.source.local.TaskDao
 import com.eroglu.architecture.data.source.network.NetworkDataSource
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
@@ -19,8 +18,8 @@ import javax.inject.Singleton
 class DefaultTaskRepository @Inject constructor(
     private val networkDataSource: NetworkDataSource,
     private val localDataSource: TaskDao,
-    @DefaultDispatcher private val dispatcher: CoroutineDispatcher = Dispatchers.IO,
-    @ApplicationScope private val scope: CoroutineScope
+    @DefaultDispatcher private val dispatcher: CoroutineDispatcher,
+    @ApplicationScope private val scope: CoroutineScope,
 ) : TaskRepository {
 
     override suspend fun createTask(title: String, description: String): String {

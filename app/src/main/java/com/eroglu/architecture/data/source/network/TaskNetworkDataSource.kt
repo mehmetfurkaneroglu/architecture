@@ -10,7 +10,7 @@ import javax.inject.Inject
  * Gerçek bir ağ (network) isteği yapmaz; bunun yerine sahte (mock) veriler döndürür.
  * Yani bu, uygulamanın ağ katmanını taklit eden bir test/örnek veri kaynağıdır.
  */
-class TaskNetworkDataSource @Inject constructor(): NetworkDataSource {
+class TaskNetworkDataSource @Inject constructor() : NetworkDataSource {
     // TaskNetworkDataSource: Ağ üzerinden veri sağlayan sınıfın sahte (mock) versiyonu
     // NetworkDataSource: Uygulamanın veri erişim arayüzü (interface)
     // Mutex: Eşzamanlı işlemlerde veri tutarlılığını korur
@@ -49,7 +49,7 @@ class TaskNetworkDataSource @Inject constructor(): NetworkDataSource {
      * - Verilen 'newTasks' listesini mevcut 'tasks' listesiyle değiştirir.
      * - Mutex ile kilitlenerek veri bütünlüğü korunur.
      */
-    override suspend fun saveTasks(newTasks: List<NetworkTask>) = accessMutex.withLock{
+    override suspend fun saveTasks(newTasks: List<NetworkTask>) = accessMutex.withLock {
         delay(SERVICE_LATENCY_IN_MILLIS)
         tasks = newTasks // Yeni görev listesini kaydet
     }

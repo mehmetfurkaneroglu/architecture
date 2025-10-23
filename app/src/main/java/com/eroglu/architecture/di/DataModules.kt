@@ -14,7 +14,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import jakarta.inject.Singleton
+import javax.inject.Singleton
 
 /**
  * Hilt, TaskRepository’ye ihtiyaç duyulan her yerde DefaultTaskRepository örneğini otomatik verir.
